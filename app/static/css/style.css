@@ -1,17 +1,21 @@
 /* Custom stylesheet */
 
 .nav-link:hover {
-  color: inherit;
-  text-decoration: none;
-  opacity: .75;
+    color: inherit;
+    text-decoration: none;
+    opacity: .75;
 }
 
 .link-reset:hover {
-  color: inherit;
-  text-decoration: none;
+    color: inherit;
+    text-decoration: none;
 }
 
 .octicon {
-  display: inline-block;
-  vertical-align: text-top;
+    display: inline-block;
+    vertical-align: text-top;
+}
+
+.value {
+    font-size: 50px;
 }
