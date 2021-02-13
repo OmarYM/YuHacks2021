@@ -9,4 +9,12 @@ router.get("/", function(req, res) {
     });
 });
 
+
+router.get("/tips", function(req, res) {
+    res.render("tips/index", {
+        count1: 1000,
+        count2: 200000
+    });
+});
+
 module.exports = router;
