@@ -42,6 +42,6 @@ app.use(express.static(paths.staticEntry));
 routes.registerRoutes(app);
 routes.registerErrorHandlers(app);
 
-app.listen(port, () => {
+app.listen(process.env.PORT || 5000, () => {
     console.log(`🚀 Server started on port ${config.port}.`);
 });
