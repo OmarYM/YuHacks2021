@@ -17,4 +17,18 @@ router.get("/tips", function(req, res) {
     });
 });
 
+router.get("/statistics", function(req, res) {
+    res.render("statistics/index", {
+        count1: 1000,
+        count2: 200000
+    });
+});
+
+router.get("/busyMap", function(req, res) {
+    res.render("busyMap/index", {
+        count1: 1000,
+        count2: 200000
+    });
+});
+
 module.exports = router;
