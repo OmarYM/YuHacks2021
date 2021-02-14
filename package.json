@@ -8,7 +8,7 @@
     },
     "scripts": {
         "start": "nodemon app/index.js",
-        "deploy": "NODE_ENV=production node app/index.js"
+        "deploy": "node app/index.js"
     },
     "dependencies": {
         "axios": "^0.21.1",
