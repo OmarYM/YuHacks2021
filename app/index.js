@@ -11,6 +11,8 @@ const routes = require("./routes");
 // Set up the express app
 const app = express();
 
+var port = process.env.PORT || 8080;
+
 // Log requests to the console.
 app.use(logger("dev"));
 
@@ -30,8 +32,8 @@ app.set("view engine", "html");
 const options = { secret: config.secretKey, saveUninitialized: true, resave: true };
 app.use(session(options));
 app.use(function(req, res, next) {
-  res.locals.session = req.session;
-  next();
+    res.locals.session = req.session;
+    next();
 });
 
 // Set up the routes for the static assets.
@@ -40,6 +42,6 @@ app.use(express.static(paths.staticEntry));
 routes.registerRoutes(app);
 routes.registerErrorHandlers(app);
 
-app.listen(config.port, () => {
-  console.log(`🚀 Server started on port ${config.port}.`);
+app.listen(port, () => {
+    console.log(`🚀 Server started on port ${config.port}.`);
 });
