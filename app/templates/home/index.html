@@ -39,10 +39,10 @@
 
 <div class="d-flex justify-content-center">
 
-    <img src="img/keele_map.jpg" usemap="#image-map" class="map" style="max-height:700px; width: auto;">
+    <img src="img/keele_map.jpg" usemap="#image-map" class="map" style="max-height:950px; width: auto;">
 
     <map name="image-map">
-    <area target="" alt="Fields" title="Fields" href="#" onClick="return false;" coords="888,209,106,225,111,1320,575,1314,689,1312,684,994,967,999,967,695,904,695,901,594,896,551,895,359" shape="poly">
+    <area target="" alt="Fields" title="Fields" href="#" onClick="return false;" data-bs-toggle="modal" data-bs-target="#exampleModal" coords="888,209,106,225,111,1320,575,1314,689,1312,684,994,967,999,967,695,904,695,901,594,896,551,895,359" shape="poly">
     <area target="_blank" alt="Top" title="Top" href="#" onClick="return false;" coords="899,215,2876,199,2881,824,2060,808,2012,663,1959,583,1882,541,1811,541,1760,575,1623,509,1596,549,1577,853,1424,859,1392,967,1360,989,1293,989,1219,959,1179,861,1166,785,1163,689,912,692" shape="poly">
     <area target="_blank" alt="Colleges" title="Colleges" href="#" onClick="return false;" coords="1599,855,1594,560,1620,514,1754,577,1872,544,1944,578,2007,649,2045,805,2096,813,2092,940,2092,1175,1969,1175,1969,1095,1733,1099,1712,1002,1603,993,1599,923" shape="poly">
     <area target="_blank" alt="Right" title="Right" href="#" onClick="return false;" coords="2092,808,2896,2277" shape="rect">
@@ -71,6 +71,32 @@
    </map>
 
 </div>
+
+
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Fields Section</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Not busy right now
+            </div>
+
+            <div class="modal-body">
+                <progress class="ml-5" id="file" value="32" max="100"> 32% </progress>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <script>
     // How long you want the animation to take, in ms
@@ -115,6 +141,31 @@
     };
 
     runAnimations();
+</script>
+
+<script type="text/javascript">
+    $.fn.maphilight.defaults = {
+        fill: true,
+        fillColor: '000000',
+        fillOpacity: 0.2,
+        stroke: true,
+        strokeColor: '0000ff',
+        strokeOpacity: 1,
+        strokeWidth: 1,
+        fade: true,
+        alwaysOn: false,
+        neverOn: false,
+        groupBy: false,
+        wrapClass: true,
+        shadow: false,
+        shadowX: 0,
+        shadowY: 0,
+        shadowRadius: 6,
+        shadowColor: '000000',
+        shadowOpacity: 0.8,
+        shadowPosition: 'outside',
+        shadowFrom: false
+    }
 
     /*! Image Map Resizer (imageMapResizer.min.js ) - v1.0.10 - 2019-04-10
      *  Desc: Resize HTML imageMap to scaled image.
@@ -192,34 +243,11 @@
     }();
     //# sourceMappingURL=imageMapResizer.map
 
-    imageMapResize();
-</script>
-
-<script type="text/javascript">
-    $.fn.maphilight.defaults = {
-        fill: true,
-        fillColor: '000000',
-        fillOpacity: 0.2,
-        stroke: true,
-        strokeColor: '0000ff',
-        strokeOpacity: 1,
-        strokeWidth: 1,
-        fade: true,
-        alwaysOn: false,
-        neverOn: false,
-        groupBy: false,
-        wrapClass: true,
-        shadow: false,
-        shadowX: 0,
-        shadowY: 0,
-        shadowRadius: 6,
-        shadowColor: '000000',
-        shadowOpacity: 0.8,
-        shadowPosition: 'outside',
-        shadowFrom: false
-    }
-
     $(function() {
         $('.map').maphilight();
+    });
+
+    $(document).ready(function() {
+        $('map').imageMapResize();
     });
 </script>
